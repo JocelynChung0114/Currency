@@ -29,16 +29,16 @@ public class MainActivity extends AppCompatActivity {
 
         if(TextUtils.isEmpty(n)) {
             new AlertDialog.Builder(this)
-                    .setTitle("Problem")
-                    .setMessage("Please enter your NTD amount")
-                    .setPositiveButton("OK", null)
+                    .setTitle(getString(R.string.problem))
+                    .setMessage(getString(R.string.enter_ntd))
+                    .setPositiveButton(getString(R.string.ok), null)
                     .show();
         } else {
             float result = Float.valueOf(n) / 30.9f;
             new AlertDialog.Builder(this)
-                    .setTitle("Result")
-                    .setMessage("USD is " + result)
-                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    .setTitle(getString(R.string.result))
+                    .setMessage(getString(R.string.usd_is) + result)
+                    .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             ntd.setText("");
